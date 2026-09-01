@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.abasyn.mvvmarchitecture"
+    namespace = "com.abasyn.recipefinder"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.abasyn.mvvmarchitecture"
+        applicationId = "com.abasyn.recipefinder"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

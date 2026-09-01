@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.abasyn.mvvmarchitecture.presentation.splash.SplashFragment"
+        android:name="com.abasyn.recipefinder.presentation.splash.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.abasyn.mvvmarchitecture.presentation.main.MainFragment"
+        android:name="com.abasyn.recipefinder.presentation.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
 </navigation>

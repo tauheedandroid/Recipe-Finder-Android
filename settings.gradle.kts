@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MVVMArchitecture"
+rootProject.name = "Recipe Finder"
 include(":app")

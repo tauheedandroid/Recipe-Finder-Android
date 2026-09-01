@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.abasyn.mvvmarchitecture.presentation.home.HomeFragment"
+        android:name="com.abasyn.recipefinder.presentation.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
-        android:name="com.abasyn.mvvmarchitecture.presentation.favorite.FavoriteFragment"
+        android:name="com.abasyn.recipefinder.presentation.favorite.FavoriteFragment"
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite" >
         <action
@@ -28,12 +28,12 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.abasyn.mvvmarchitecture.presentation.settings.SettingsFragment"
+        android:name="com.abasyn.recipefinder.presentation.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/resultFragment"
-        android:name="com.abasyn.mvvmarchitecture.presentation.result.ResultFragment"
+        android:name="com.abasyn.recipefinder.presentation.result.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" >
         <action
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/previewFragment"
-        android:name="com.abasyn.mvvmarchitecture.presentation.preview.PreviewFragment"
+        android:name="com.abasyn.recipefinder.presentation.preview.PreviewFragment"
         android:label="fragment_preview"
         tools:layout="@layout/fragment_preview">
         <argument
