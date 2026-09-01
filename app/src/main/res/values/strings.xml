@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">MVVMArchitecture</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="instructions">Instructions</string>
+    <string name="added_to_favorites">Added to Favorites</string>
+    <string name="recipe_not_found">Recipe not found</string>
+    <string name="error_occurred">An error occurred</string>
 </resources>

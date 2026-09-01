@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAF4F0">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="24dp">
+
+        <!-- App Title -->
+        <LinearLayout
+            android:id="@+id/layoutTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvRecipe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recipe"
+                android:textColor="#202124"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvFinder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Finder"
+                android:textColor="#FF6B00"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- What You Have -->
+        <TextView
+            android:id="@+id/tvWhatYouHave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="32dp"
+            android:text="What do you have?"
+            android:textColor="#202124"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutTitle" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:text="Enter ingredients you have"
+            android:textColor="#777777"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvWhatYouHave" />
+
+        <!-- Ingredient Search -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ingredientInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            app:boxBackgroundColor="#F7F7F7"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="26dp"
+            app:boxCornerRadiusBottomStart="26dp"
+            app:boxCornerRadiusTopEnd="26dp"
+            app:boxCornerRadiusTopStart="26dp"
+            app:boxStrokeColor="#FF6B00"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="1dp"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSubtitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etIngredients"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_ingredient_edittext"
+                android:gravity="center_vertical"
+                android:hint="Chicken, Tomato, Onion..."
+                android:inputType="text"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:singleLine="true"
+                android:textColor="#202124"
+                android:textColorHint="#999999"
+                android:textSize="13sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Find Recipes Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFindRecipes"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp"
+            android:text="Find Recipes"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:backgroundTint="#FF6B00"
+            app:cornerRadius="26dp"
+            app:icon="@drawable/ic_search"
+            app:iconGravity="textStart"
+            app:iconTint="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ingredientInputLayout" />
+
+        <!-- Popular Ingredients -->
+        <TextView
+            android:id="@+id/tvPopularIngredients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:text="Popular Ingredients"
+            android:textColor="#202124"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnFindRecipes" />
+
+        <!-- Popular Ingredients RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPopularIngredients"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="12dp"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPopularIngredients" />
+
+        <!-- No Popular Ingredients -->
+        <TextView
+            android:id="@+id/tvNoIngredients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No ingredients available"
+            android:textColor="#999999"
+            android:textSize="13sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/rvPopularIngredients"
+            app:layout_constraintEnd_toEndOf="@id/rvPopularIngredients"
+            app:layout_constraintStart_toStartOf="@id/rvPopularIngredients"
+            app:layout_constraintTop_toTopOf="@id/rvPopularIngredients" />
+
+        <!-- Popular Ingredients Progress -->
+        <ProgressBar
+            android:id="@+id/progressPopularIngredients"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:indeterminateTint="#FF6B00"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/rvPopularIngredients"
+            app:layout_constraintEnd_toEndOf="@id/rvPopularIngredients"
+            app:layout_constraintStart_toStartOf="@id/rvPopularIngredients"
+            app:layout_constraintTop_toTopOf="@id/rvPopularIngredients" />
+
+        <!-- Recent Recipes -->
+        <TextView
+            android:id="@+id/tvRecentRecipes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:text="Popular Recipes"
+            android:textColor="#202124"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvPopularIngredients" />
+
+        <!-- Recent Recipes RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRecentRecipes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            android:overScrollMode="never"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRecentRecipes"
+            tools:listitem="@layout/item_recent_recipe" />
+
+        <!-- No Recent Recipes -->
+        <TextView
+            android:id="@+id/tvNoRecentRecipes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No recent recipes available"
+            android:textColor="#999999"
+            android:textSize="13sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/rvRecentRecipes"
+            app:layout_constraintEnd_toEndOf="@id/rvRecentRecipes"
+            app:layout_constraintStart_toStartOf="@id/rvRecentRecipes"
+            app:layout_constraintTop_toTopOf="@id/rvRecentRecipes" />
+
+        <!-- Recent Recipes Progress -->
+        <ProgressBar
+            android:id="@+id/progressRecentRecipes"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:indeterminateTint="#FF6B00"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/rvRecentRecipes"
+            app:layout_constraintEnd_toEndOf="@id/rvRecentRecipes"
+            app:layout_constraintStart_toStartOf="@id/rvRecentRecipes"
+            app:layout_constraintTop_toTopOf="@id/rvRecentRecipes" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

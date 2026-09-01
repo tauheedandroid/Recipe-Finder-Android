@@ -81,6 +81,8 @@ dependencies {
 
     implementation(libs.gson)
 
+    implementation(libs.coil)
+
     implementation(libs.retrofit.kotlinx)
     implementation(libs.serialization.json)
 }
